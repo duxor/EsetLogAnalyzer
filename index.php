@@ -13,7 +13,6 @@
     $router->add('/', 'HomeController@index');
     $router->add('/index', 'HomeController@index');
     $router->add('/log-analizer', 'HomeController@logAnalizer');
-    $router->add('/test', 'HomeController@test');
 
     $router->run();
 
