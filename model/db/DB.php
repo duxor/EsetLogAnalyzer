@@ -43,7 +43,7 @@ class DB
      */
     public function __construct()
     {
-        $this->dbPath = Config::get("dbPath");
+        $this->dbPath = Config::getDbPath();
         $this->connectionString = "odbc:Driver={Microsoft Access Driver (*.mdb)};Dbq={$this->dbPath};";
         $this->connect();
         $this->fields = [

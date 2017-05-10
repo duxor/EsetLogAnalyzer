@@ -9,12 +9,23 @@
 
 use Config\Config;
 
+/**
+ * Class Lang
+ *
+ * @author Dusan Perisic
+ */
 class Lang
 {
-    public static function get(string $file, string $key)
+    /**
+     * @param string $file
+     * @param string $key
+     * @return mixed|string
+     * @author Dusan Perisic
+     */
+    public static function get( string $file, string $key)
     {
         $dictionary = [];
-        $config = Config::get("lang");
+        $config = Config::getLang();
         if (file_exists("view/language/{$config}/{$file}.php"))
         {
             require "view/language/{$config}/{$file}.php";
@@ -24,7 +35,13 @@ class Lang
         return "{$file}.{$key}";
     }
 
-    public static function echo(string $file, string $key)
+    /**
+     * @param string $file
+     * @param string $key
+     * @return null
+     * @author Dusan Perisic
+     */
+    public static function echo( string $file, string $key)
     {
         echo self::get($file, $key);
         return null;

@@ -20,11 +20,16 @@ class Router
 
     /**
      * Router constructor.
+     *
+     * @param null $route
      */
-    public function __construct()
+    public function __construct( $route = null)
     {
+        if (!$route)
+            $route = $_SERVER["REQUEST_URI"];
+
         $this->routeList = [];
-        $this->route = trim($_SERVER["REQUEST_URI"], "/");
+        $this->route = trim($route, "/");
         if (!$this->route)
             $this->route = "index";
     }
@@ -57,10 +62,13 @@ class Router
     }
 
     /**
-     *
+     * @author Dusan Perisic
      */
-    public function run()
+    public function run($route = null)
     {
+        if ($route)
+            $this->route = trim($route, "/");
+
         $route = $this->find();
         if ($route && file_exists("view/{$this->route}.php") && file_exists("controller/{$route[0]}.php"))
         {
@@ -78,6 +86,6 @@ class Router
             else $data = Lang::get("errors", "pageNotFound");*/
         }
 
-        require_once "view/{$this->route}.php";
+        include "view/{$this->route}.php";
     }
 }
