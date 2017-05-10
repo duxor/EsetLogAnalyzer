@@ -6,6 +6,9 @@
  * Date: 4/25/2017
  * Time: 7:11 AM
  */
+
+use Config\Config;
+
 class Lang
 {
     public static function get(string $file, string $key)

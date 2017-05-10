@@ -64,7 +64,8 @@ class Router
         $route = $this->find();
         if ($route && file_exists("view/{$this->route}.php") && file_exists("controller/{$route[0]}.php"))
         {
-            $data   = new $route[0]();
+            $controllerName = "Controller\\". $route[0];
+            $data   = new $controllerName();
             $route  = $route[1];
             $data   = $data->$route();
         }

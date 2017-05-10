@@ -1,11 +1,14 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: programer
  * Date: 4/18/2017
  * Time: 11:10 AM
  */
+
+namespace Model\Group;
+
+use Model\User;
 
 class Users
 {

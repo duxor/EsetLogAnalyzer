@@ -9,13 +9,15 @@
 $classes = [
     'config/Config.php',
     'route/Router.php',
-    'model/DB.php',
+    'model/db/DB.php',
+    'model/Model.php',
     'model/User.php',
     'model/Device.php',
+    'model/group/Users.php',
+    'model/group/Devices.php',
+    'model/group/AllowedDevices.php',
+    'controller/Controller.php',
     'controller/HomeController.php',
-    'controller/Users.php',
-    'controller/Devices.php',
-    'controller/AllowedDevices.php',
     'view/language/Lang.php',
 ];
 

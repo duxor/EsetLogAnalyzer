@@ -6,6 +6,9 @@
  * Date: 4/25/2017
  * Time: 7:13 AM
  */
+
+namespace Config;
+
 class Config
 {
     public static function getAll()

@@ -1,12 +1,18 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: programer
  * Date: 4/24/2017
  * Time: 2:30 PM
  */
-class HomeController
+
+namespace Controller;
+
+use Model\Db\DB;
+use Model\Group\Users;
+use Model\Group\AllowedDevices;
+
+class HomeController implements Controller
 {
     public function index()
     {
@@ -48,10 +54,5 @@ class HomeController
             "users" => $k,
             "allowedDevices" => new AllowedDevices()
         ];
-    }
-
-    public function test()
-    {
-        return "Test method!" . Lang::get("index","test");
     }
 }

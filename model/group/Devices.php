@@ -1,11 +1,15 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: programer
  * Date: 4/20/2017
  * Time: 9:26 AM
  */
+
+namespace Model\Group;
+
+use Model\Device;
+
 class Devices
 {
     /**
@@ -15,9 +19,9 @@ class Devices
 
     /**
      * Uredjaji constructor.
-     * @param string $tipUredjaja
-     * @param string $metaUredjaja
-     * @param int $odobren
+     * @param string $deviceType
+     * @param string $deviceMeta
+     * @param int $allowed
      */
     public function __construct(string $deviceType = "",
                                 string $deviceMeta = "",
@@ -28,9 +32,9 @@ class Devices
     }
 
     /**
-     * @param string $tipUredjaja
-     * @param string $metaUredjaja
-     * @param int $odobren
+     * @param string $deviceType
+     * @param string $deviceMeta
+     * @param int $allowed
      * @return mixed|Device
      */
     public function add(string $deviceType,

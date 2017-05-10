@@ -1,11 +1,15 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: programer
  * Date: 4/24/2017
  * Time: 7:48 AM
  */
+
+namespace Model\Group;
+
+use Model\Model;
+
 class AllowedDevices
 {
     /**
@@ -24,10 +28,10 @@ class AllowedDevices
     }
 
     /**
-     * @param Device $_device
+     * @param Model $_device
      * @return bool
      */
-    public function isAllowed(Device $_device)
+    public function isAllowed(Model $_device)
     {
         foreach ($this->listAllowedDevices->toArray() as $device)
         {

@@ -6,6 +6,11 @@
  * Date: 4/24/2017
  * Time: 8:08 AM
  */
+
+namespace Model\Db;
+
+use Config\Config;
+
 class DB
 {
     /**
@@ -53,7 +58,7 @@ class DB
      *
      */
     private function connect(){
-        $this->conn = new PDO($this->connectionString, $this->username, $this->password);
+        $this->conn = new \PDO($this->connectionString, $this->username, $this->password);
     }
 
     /**

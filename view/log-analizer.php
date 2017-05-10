@@ -45,7 +45,7 @@
                     echo
                         "<span class=' alert-" . ($device["allowed"] ? "success" : "danger") . "'>
                                     {$device["type"]}<br>";
-                    $odobren = $data["allowedDevices"]->isAllowed(new Device("", $device["meta"]));
+                    $odobren = $data["allowedDevices"]->isAllowed(new \Model\Device("", $device["meta"]));
                     foreach ($meta as $m) {
                         if (strstr($m, "Serial number") > -1) {
                             $out = !$odobren ? "<span class='alert-danger'>{$m}</span>" : $m;

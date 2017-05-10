@@ -6,7 +6,12 @@
  * Date: 4/18/2017
  * Time: 11:10 AM
  */
-class User
+
+namespace Model;
+
+use Model\Group\Devices;
+
+class User implements Model
 {
     /**
      * @var string
@@ -85,10 +90,10 @@ class User
 
     //ToDo: Sagledati potrebu za ovom metodom, ukloniti ako ne treba
     /**
-     * @param User $user
+     * @param Model $user
      * @return bool
      */
-    public function isEqual(User $user)
+    public function isEqual(Model $user)
     {
         return  $user->getName()        == $this->getName() &&
                 $user->getComputer()    == $this->getComputer();

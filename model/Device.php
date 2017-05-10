@@ -6,7 +6,10 @@
  * Date: 4/18/2017
  * Time: 11:10 AM
  */
-class Device
+
+namespace Model;
+
+class Device implements Model
 {
     /**
      * @var string
@@ -77,10 +80,10 @@ class Device
 
     //ToDo: Sagledati da li postoji potreba za ovom metodom, ukloniti ako ne treba
     /**
-     * @param Device $device
+     * @param Model $device
      * @return bool
      */
-    public function isEqual(Device $device)
+    public function isEqual(Model $device)
     {
         return  $device->getType()      == $this->getType() &&
                 $device->getMeta()      == $this->getMeta() &&
